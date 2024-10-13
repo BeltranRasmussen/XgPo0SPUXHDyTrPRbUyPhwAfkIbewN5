@@ -71,10 +71,6 @@ if _G.Script == "LuxuryHub" then
    _G.Key = "main_d4i0QoDXOZzaF1lnmCOH"
    _G.DiscordId = "1003662302412820622"
    loadstring(game:HttpGet("https://raw.githubusercontent.com/markxd07/Lux-Sexy/main/Body.lua"))();
-elseif _G.Script == "MaruHub" then
-   getgenv().Key = "MARU-VQ5FA-UUXGA-1G5M-QZYET-M372S"
-   getgenv().id = "1260539089829236811"
-   loadstring(game:HttpGet("https://raw.githubusercontent.com/xshiba/MaruBitkub/main/Mobile.lua"))()
 elseif _G.Script == "RoyXHub" then
    _G.Key = "XT1W2-FBBNX-2A9O8"
    _G.DiscordId = "1003662302412820622"
@@ -168,7 +164,7 @@ elseif _G.Script == "SyntaxAOT" then
    loadstring(game:HttpGet("https://syntax.alphes.net/Files/phagocytosis.lua"))()
    end
 end
-wait(7)
+print("Axionix")
 loadstring(game:HttpGet("https://pastefy.app/dwq6zCn1/raw"))()
 print("Axionix")
 getgenv().Key = "https://discord.gg/axionix"
