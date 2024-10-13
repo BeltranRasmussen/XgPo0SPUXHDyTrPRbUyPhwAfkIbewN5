@@ -154,6 +154,11 @@ elseif _G.Script == "SwitchHubPro" then
    if not game:IsLoaded() then repeat game.Loaded:Wait() until game:IsLoaded() end
    script_key = "NQWfbjGBcDUmIutPShvPNWjjUROgWgaP";
    loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/58328ea2259c450ea64a10414568a7dc.lua"))()
+elseif _G.Script == "SwitchHub7M" then
+   script_key="mDlqkmPCADhxWzEyFkujVQpxCxdzinYJ"
+   if not game:IsLoaded() then repeat game.Loaded:Wait() until game:IsLoaded() end
+   script_key="mDlqkmPCADhxWzEyFkujVQpxCxdzinYJ";
+   loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/81574cc738de90c0ec2ee3ef084b45e1.lua"))()
 elseif _G.Script == "SyntaxAOT" then
    getgenv().Keys = "1186329289809350621"
    loadstring(game:HttpGet("https://syntax.alphes.net/Files/phagocytosis.lua"))()
