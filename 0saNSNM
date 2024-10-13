@@ -1,0 +1,24 @@
+-- This Is Where The Key To Use The Script Of Those Who Bought Same Hwid From AfxcaxiRoblox Or Axionix
+local keylist = {"CBCF1fYm9NE", "8zSGUPNGDml", "dOJnqS9VCie", "3I41DKma8jy", "OK6BozlrYSK", "bwpixQmctXH", "Na333", "UzRsT4qvkn6", "hch5VrxzQxv", "Vimf4RRn8Gm", "eCoBlNQJIja", "1v7GBE0Og73", "tkRj4pyMWoj", "f9oOxcUkBaS", "afBqizLhe5W", "2noj6F7LX7u", "y8bGr3tbl", "FtehDr8R2", "cM9fbMjBt", "UjeUMOB5WpwWCRH", "9qry7Pk6wy6KQvg", "xLwPEIXHM2IRD8p", "e3A06TRxWm1no67", "wms5uMmxIdd", "lPuYKQS8br", "gmlq0LdKvre", "x2zpj5SyUvu", "NYhAlmjFdEi", "S9WYCFX14P2", "YIwiN737YdA", "vcjwnGEK7r6", "TLTzrsoUgD6", "W7y9HH8bsae", "kj9q15XbMzm", "BKItyFBnKi3", "76IIdQaHHdf", "fFoYwISFnKN", "iM7M8bCQFXV", "wms5uMmxIdd", "u2VXbdFFMjp", "aRNTmnHxEAJ", "O3yef2qg8C4", "N7DEWPRMSPQ", "UTGA4Lyr1ac", "eugWB7UhAaK"}
+local found = false
+
+for i, v in pairs(keylist) do 
+    if script_key == v then 
+       found = true
+       break 
+    end
+end
+
+if found then
+   print("Whitelist...")
+   print("Correct Key And Valid Key")
+   print("Done")
+   print("You Can Use This Script")
+else
+   print("Whitelist...")
+   print("Wrong Key")
+   print("Done")
+   print("You Can't Use This Script")
+   setclipboard("https://discord.gg/axionix")
+   game.Players.LocalPlayer:Kick("The Key Is Wrong, Please Check The Key And Script. If It's Wrong, Report It To AfxcaxiRoblox") 
+end
