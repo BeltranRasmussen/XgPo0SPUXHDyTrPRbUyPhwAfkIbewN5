@@ -168,7 +168,7 @@ elseif _G.Script == "SyntaxAOT" then
    loadstring(game:HttpGet("https://syntax.alphes.net/Files/phagocytosis.lua"))()
    end
 end
-print("Axionix")
+wait(7)
 loadstring(game:HttpGet("https://pastefy.app/dwq6zCn1/raw"))()
 print("Axionix")
 getgenv().Key = "https://discord.gg/axionix"
