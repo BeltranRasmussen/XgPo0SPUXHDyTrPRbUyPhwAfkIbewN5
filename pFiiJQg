@@ -99,6 +99,10 @@ elseif _G.Script == "BananaHubKaitunKL" then
    repeat wait() until game:IsLoaded() and game.Players.LocalPlayer
    getgenv().Key = "ffb89f1ddc2b13aff5e1923e"
    loadstring(game:HttpGet("https://raw.githubusercontent.com/obiiyeuem/vthangsitink/main/BananaCat-KaitunKL.lua"))()
+elseif _G.Script == "BananaHubKaitunPG" then
+   repeat wait() until game:IsLoaded() and game.Players.LocalPlayer
+   getgenv().Key = "ffb89f1ddc2b13aff5e1923e"
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/obiiyeuem/vthangsitink/main/BananaHub.lua"))()
 elseif _G.Script == "BananaHubBountyBF" then
    repeat wait()
    until game:IsLoaded() and game.Players.LocalPlayer
