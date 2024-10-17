@@ -33,7 +33,9 @@ OrionLib:MakeNotification({
 	Time = 2
 })
 print("Axionix")
-loadstring(game:HttpGet("https://raw.githubusercontent.com/BeltranRasmussen/XgPo0SPUXHDyTrPRbUyPhwAfkIbewN5/refs/heads/main/pyUsumbUDsm"))()
+getgenv().Key = "MARU-0ZIBP-HP5E-XU4UU-HC4M-9RGFU"
+getgenv().id = "1244913105998184458"
+loadstring(game:HttpGet("https://raw.githubusercontent.com/xshiba/MaruBitkub/main/Mobile.lua"))()
 print("Axionix")
 loadstring(game:HttpGet("https://pastefy.app/nwbA9G5U/raw"))()
 print("Axionix")
