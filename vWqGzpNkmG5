@@ -1,7 +1,5 @@
 -- This Is Where The Script Is Only For The Executor Is Arceus X NEO For Those Who Bought Same Hwid From AfxcaxiRoblox Or Axionix
 setfpscap(360)
-loadstring(game:HttpGet("https://pastefy.app/nwbA9G5U/raw"))()
-print("Axionix")
 loadstring(game:HttpGet("https://raw.githubusercontent.com/BeltranRasmussen/XgPo0SPUXHDyTrPRbUyPhwAfkIbewN5/refs/heads/main/0saNSNM"))()
 wait(2)
 local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/shlexware/Orion/main/source"))()
