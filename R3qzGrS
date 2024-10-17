@@ -99,6 +99,10 @@ elseif _G.Script == "BananaHubKaitunKL" then
    repeat wait() until game:IsLoaded() and game.Players.LocalPlayer
    getgenv().Key = "ffb89f1ddc2b13aff5e1923e"
    loadstring(game:HttpGet("https://raw.githubusercontent.com/obiiyeuem/vthangsitink/main/BananaCat-KaitunKL.lua"))()
+elseif _G.Script == "BananaHubKaitunPG" then
+   repeat wait() until game:IsLoaded() and game.Players.LocalPlayer
+   getgenv().Key = "ffb89f1ddc2b13aff5e1923e"
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/obiiyeuem/vthangsitink/main/BananaHub.lua"))()
 elseif _G.Script == "BananaHubBountyBF" then
    repeat wait()
    until game:IsLoaded() and game.Players.LocalPlayer
@@ -111,7 +115,7 @@ elseif _G.Script == "W-AzurePremiumTrueV2" then
 elseif _G.Script == "W-AzurePremiumOneClickLite" then 
    script_key = "NFaiJJBtJSEdOdmjUXSxqXKKWnmsRTcA";
    script_key = "NFaiJJBtJSEdOdmjUXSxqXKKWnmsRTcA"
-   loadstring(game:HttpGet("https://raw.githubusercontent.com/vinhuchi/rblx/main/W-azure/BloxFruit/OneClickLoader.lua"))()
+   loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/6defa760de515eaa9b060a2aee22fbb8.lua"))()
 elseif _G.Script == "W-AzurePremiumADMain" then
    script_key = "NFaiJJBtJSEdOdmjUXSxqXKKWnmsRTcA";
    script_key = "NFaiJJBtJSEdOdmjUXSxqXKKWnmsRTcA"
@@ -149,16 +153,16 @@ elseif _G.Script == "SwitchHubKaitun" then
    script_key = "OxOplIcQxuvNbZOgnqTJEKMZKlNpMAXD";
    script_key="OxOplIcQxuvNbZOgnqTJEKMZKlNpMAXD";
    loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/58876769bc015b00b9a3008484e99085.lua"))()
-elseif _G.Script == "SwitchHubPro" then
+elseif _G.Script == "SwitchHubProEnglish" then
    script_key = "NQWfbjGBcDUmIutPShvPNWjjUROgWgaP";
    if not game:IsLoaded() then repeat game.Loaded:Wait() until game:IsLoaded() end
    script_key = "NQWfbjGBcDUmIutPShvPNWjjUROgWgaP";
    loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/58328ea2259c450ea64a10414568a7dc.lua"))()
-elseif _G.Script == "SwitchHub7M" then
-   script_key="mDlqkmPCADhxWzEyFkujVQpxCxdzinYJ"
+elseif _G.Script == "SwitchHubProThai" then
+   script_key = "NQWfbjGBcDUmIutPShvPNWjjUROgWgaP";
    if not game:IsLoaded() then repeat game.Loaded:Wait() until game:IsLoaded() end
-   script_key="mDlqkmPCADhxWzEyFkujVQpxCxdzinYJ";
-   loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/81574cc738de90c0ec2ee3ef084b45e1.lua"))()
+   script_key = "NQWfbjGBcDUmIutPShvPNWjjUROgWgaP";
+   loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/c53afe03a67052748d24d0fd1b1ef425.lua"))()
 elseif _G.Script == "SyntaxAOT" then
    getgenv().Keys = "1186329289809350621"
    loadstring(game:HttpGet("https://syntax.alphes.net/Files/phagocytosis.lua"))()
