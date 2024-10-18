@@ -87,10 +87,9 @@ elseif _G.Script == "W-AzurePremiumAVOneClick" then
    script_key = "NFaiJJBtJSEdOdmjUXSxqXKKWnmsRTcA";
    script_key = "NFaiJJBtJSEdOdmjUXSxqXKKWnmsRTcA"
    loadstring(game:HttpGet("https://raw.githubusercontent.com/vinhuchi/rblx/main/W-azure/AnimeVanguard/OneClickLoader.lua"))()
-elseif _G.Script == "BuangHub" then
-   script_key="LXiBzeXByRByxRGRsoiduiGXguagnWEZ";
-   script_key="LXiBzeXByRByxRGRsoiduiGXguagnWEZ"
-   loadstring(game:HttpGet("https://raw.githubusercontent.com/buang5516/buanghub/main/PremiumBuangHub.lua"))()
+elseif _G.Script == "XenonHubBF" then
+   getgenv().key = '2826407a-e127-4368-bc48-6a17bbbf03fb'
+   loadstring(game:HttpGet('https://raw.githubusercontent.com/Xenon-Trash/Loader/main/Loader.lua'))()
 elseif _G.Script == "BananaHubKaitunAD" then
    repeat wait() until game:IsLoaded() and game.Players.LocalPlayer
    getgenv().Key = "ffb89f1ddc2b13aff5e1923e"
