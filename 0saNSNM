@@ -20,5 +20,5 @@ else
    print("Done")
    print("You Can't Use This Script")
    setclipboard("https://discord.gg/axionix")
-   game.Players.LocalPlayer:Kick("The Key Is Wrong, Please Check The Key And Script. If It's Wrong, Report It To AfxcaxiRoblox") 
+   game:shutdown()
 end
