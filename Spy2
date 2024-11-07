@@ -1,4 +1,4 @@
 spawn(function() 
-     loadstring(game:HttpGet("https://pastefy.app/o3CKTsQj/raw"))()
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/BeltranRasmussen/XgPo0SPUXHDyTrPRbUyPhwAfkIbewN5/refs/heads/main/Spy1"))()
 end)
 
