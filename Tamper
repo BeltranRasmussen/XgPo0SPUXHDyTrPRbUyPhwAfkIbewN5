@@ -1,0 +1,6 @@
+while wait(30) do
+    print("Check And Turn On Anti Tamper")
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/RISER93-ROBLOX/AfxcaxiRT1/refs/heads/main/Anti%20Tamper%20X1"))()
+    wait(1)
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/RISER93-ROBLOX/AfxcaxiRT1/refs/heads/main/Anti%20Tamper%20X2"))()
+end
