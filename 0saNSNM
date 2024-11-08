@@ -1,24 +1,39 @@
 -- This Is Where The Key To Use The Script Of Those Who Bought Same Hwid From AfxcaxiRoblox Or Axionix
-local GMXLQUPYEMSH = {"RGOCYUFX", "DOQGGPXP", "TTKIuaDLeEbtCLZiDnuTYvHfvElJxjCV", "hqwIrkQxdqXSOzjoxrtWQSHHjKLwahAO", "JQuUUNDJgbPrIvHXgcigHzRHHHwNkCTK", "QiuhZdyubKBsHgFVLzqeGwTPfykxpLVD", "f4d2cgx71gnn573x3lahtpvlcras2", "vRhUFYkoAVVrTNPNExTjXDCpWBlDAuB", "wzdaCxdWEvkSHwANENLIpWTvuRnFFHMr", "0syYN94DQ6b", "XchUQU0aYPs", "Vy043YIfPXM", "c1v85EYAguz", "amzCgxJUat5", "AIS5GfzdX22", "CBCF1fYm9NE", "8zSGUPNGDml", "dOJnqS9VCie", "3I41DKma8jy", "OK6BozlrYSK", "bwpixQmctXH", "Na333", "UzRsT4qvkn6", "hch5VrxzQxv", "Vimf4RRn8Gm", "eCoBlNQJIja", "1v7GBE0Og73", "tkRj4pyMWoj", "f9oOxcUkBaS", "afBqizLhe5W", "2noj6F7LX7u", "y8bGr3tbl", "FtehDr8R2", "cM9fbMjBt", "UjeUMOB5WpwWCRH", "9qry7Pk6wy6KQvg", "xLwPEIXHM2IRD8p", "e3A06TRxWm1no67", "wms5uMmxIdd", "lPuYKQS8br", "gmlq0LdKvre", "x2zpj5SyUvu", "S9WYCFX14P2", "YIwiN737YdA", "vcjwnGEK7r6", "TLTzrsoUgD6", "W7y9HH8bsae", "kj9q15XbMzm", "BKItyFBnKi3", "76IIdQaHHdf", "fFoYwISFnKN", "iM7M8bCQFXV", "wms5uMmxIdd", "u2VXbdFFMjp", "aRNTmnHxEAJ", "O3yef2qg8C4", "N7DEWPRMSPQ", "UTGA4Lyr1ac", "eugWB7UhAaK"}
-local found = false
+local FHKGOHEDMLPC = {"RGOCYUFX"} 
+local loGPNhIJGBYh = {"RGOCYUFX", "DOQGGPXP", "TTKIuaDLeEbtCLZiDnuTYvHfvElJxjCV", "hqwIrkQxdqXSOzjoxrtWQSHHjKLwahAO", "JQuUUNDJgbPrIvHXgcigHzRHHHwNkCTK", "QiuhZdyubKBsHgFVLzqeGwTPfykxpLVD", "f4d2cgx71gnn573x3lahtpvlcras2", "vRhUFYkoAVVrTNPNExTjXDCpWBlDAuB", "wzdaCxdWEvkSHwANENLIpWTvuRnFFHMr", "0syYN94DQ6b", "XchUQU0aYPs", "Vy043YIfPXM", "c1v85EYAguz", "amzCgxJUat5", "AIS5GfzdX22", "CBCF1fYm9NE", "8zSGUPNGDml", "dOJnqS9VCie", "3I41DKma8jy", "OK6BozlrYSK", "bwpixQmctXH", "Na333", "UzRsT4qvkn6", "hch5VrxzQxv", "Vimf4RRn8Gm", "eCoBlNQJIja", "1v7GBE0Og73", "tkRj4pyMWoj", "f9oOxcUkBaS", "afBqizLhe5W", "2noj6F7LX7u", "y8bGr3tbl", "FtehDr8R2", "cM9fbMjBt", "UjeUMOB5WpwWCRH", "9qry7Pk6wy6KQvg", "xLwPEIXHM2IRD8p", "e3A06TRxWm1no67", "wms5uMmxIdd", "lPuYKQS8br", "gmlq0LdKvre", "x2zpj5SyUvu", "S9WYCFX14P2", "YIwiN737YdA", "vcjwnGEK7r6", "TLTzrsoUgD6", "W7y9HH8bsae", "kj9q15XbMzm", "BKItyFBnKi3", "76IIdQaHHdf", "fFoYwISFnKN", "iM7M8bCQFXV", "wms5uMmxIdd", "u2VXbdFFMjp", "aRNTmnHxEAJ", "O3yef2qg8C4", "N7DEWPRMSPQ", "UTGA4Lyrac", "eugWB7UhAaK"}
 
-for i, v in pairs(GMXLQUPYEMSH) do 
+local yWLyMncZYMEi = false
+local wWvfweKxIJeY = false
+
+for i, v in pairs(FHKGOHEDMLPC) do 
     if script_key == v then 
-       found = true
-       break 
+        yWLyMncZYMEi = true
+        break 
     end
 end
 
-if found then
-   print("Whitelist...")
-   print("Correct Key And Valid Key")
-   print("Done")
-   print("You Can Use This Script")
+for i, v in pairs(loGPNhIJGBYh) do 
+    if script_key == v then 
+        wWvfweKxIJeY = true
+        break
+    end
+end
+
+if wWvfweKxIJeY then
+    print("Blacklist...")  
+    print("Your key is blacklisted.")
+    print("Done")
+    print("You can't use this script.")
+    setclipboard("https://discord.gg/axionix")
+    game.Players.LocalPlayer:Kick("The Key Is Wrong, Please Check The Key And Script. If It's Wrong, Report It To AfxcaxiRoblox") 
+elseif yWLyMncZYMEi then
+    print("Whitelist...")
+    print("Correct Key And Valid Key")
+    print("Done")
+    print("You can use this script.")
 else
-   print("Whitelist...")
-   print("Wrong Key")
-   print("Done")
-   print("You Can't Use This Script")
-   setclipboard("https://discord.gg/axionix")
-   game:shutdown()
+    print("Whitelist...")
+    print("Wrong Key")
+    print("Done")
+    print("You can't use this script.")
 end
