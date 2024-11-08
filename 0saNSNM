@@ -20,20 +20,18 @@ for i, v in pairs(loGPNhIJGBYh) do
 end
 
 if wWvfweKxIJeY then
-    print("Blacklist...")  
-    print("Your key is blacklisted.")
-    print("Done")
-    print("You can't use this script.")
-    setclipboard("https://discord.gg/axionix")
-    game.Players.LocalPlayer:Kick("The Key Is Wrong, Please Check The Key And Script. If It's Wrong, Report It To AfxcaxiRoblox") 
+    warn("Your Key Has Been Blacklisted!")  
+    warn("You Cannot Use My Script With Blacklisted Key!")
+    setclipboard("https://discord.gg/FcEGmkNDDe")
+    game.Players.LocalPlayer:Kick("Your Used Key Has Been Permanently Blacklisted: https://discord.gg/FcEGmkNDDe") 
+    while true do wait() end
 elseif yWLyMncZYMEi then
-    print("Whitelist...")
-    print("Correct Key And Valid Key")
-    print("Done")
-    print("You can use this script.")
+    print("Your Key Is Correct.")  
+    print("You Can Use My Script.")
 else
-    print("Whitelist...")
-    print("Wrong Key")
-    print("Done")
-    print("You can't use this script.")
+    warn("Your Key Is Wrong And Incorrect!")  
+    warn("You Can't Use My Script With Incorrect And Wrong Key!")
+    setclipboard("https://discord.gg/FcEGmkNDDe")
+    game.Players.LocalPlayer:Kick("Your Key Is Wrong: https://discord.gg/FcEGmkNDDe") 
+    while true do wait() end
 end
