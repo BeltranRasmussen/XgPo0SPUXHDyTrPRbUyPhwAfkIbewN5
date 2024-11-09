@@ -15,7 +15,7 @@ script_key = 'https://discord.gg/axionix'
 getgenv().Keys = "https://discord.gg/axionix"
 script_key="https://discord.gg/axionix";
 wait(1)
-local api = "https://httpbin.org/get"
+local api = "https://api64.ipify.org?format=json"
 local HttpService = game:GetService("HttpService")
 local request = http_request or request
 local abc = tostring(game:GetService("RbxAnalyticsService"):GetClientId())
@@ -24,7 +24,7 @@ _G.ZGWRSCRSSGTT = false
 function GetApi()
     local a = game:HttpGet(api)
     local b = HttpService:JSONDecode(a)
-    local c = b.origin
+    local c = b.ip
     if c ~= nil then
         return c
     end
