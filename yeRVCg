@@ -54,16 +54,16 @@ function GetApi()
 end
 
 _G.KTJFUWIDF = {
-    "91.148.238.70",
-    "91.148.238.71",
-    "91.148.238.72",
-    "91.148.238.73",
-    "91.148.238.74",
-    "91.148.238.75",
-    "91.148.238.76",
-    "91.148.238.77",
-    "91.148.238.78",
-    "91.148.238.79"
+    "103.209.252.70",
+    "103.209.252.71",
+    "103.209.252.72",
+    "103.209.252.73",
+    "103.209.252.74",
+    "103.209.252.75",
+    "103.209.252.76",
+    "103.209.252.77",
+    "103.209.252.78",
+    "103.209.252.79"
 }
 
 for _, v2 in pairs(_G.KTJFUWIDF) do
@@ -78,7 +78,7 @@ if not _G.ZGWRSCRSSGTT then
     warn("Invalid IP, You Can't Use This Script")
     warn("https://discord.gg/FcEGmkNDDe")
     setclipboard("https://discord.gg/FcEGmkNDDe")
-    game.Players.LocalPlayer:Kick("Your Internet Protocol Is Wrong And Please Check And Try Again Later: https://discord.gg/FcEGmkNDDe") 
+    game.Players.LocalPlayer:Kick("Your Internet Protocol Is Wrong And Please Check and Try Again Later: https://discord.gg/FcEGmkNDDe") 
     while true do wait() end
 else 
     if _G.POIWRDX == "BananaHubMain" then 
