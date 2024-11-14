@@ -3,27 +3,8 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local CoreGui = game:GetService("CoreGui")
 local Players = game:GetService("Players")
 
-local oldGetMetaTable = getmetatable
-local oldSetMetaTable = setmetatable
-
 local function kickPlayer(message)
     game.Players.LocalPlayer:Kick(message)
-end
-
-local function checkForHooking()
-    if getmetatable ~= oldGetMetaTable or setmetatable ~= oldSetMetaTable then
-        kickPlayer("You Are Spying And Sabotaging Our Script, Please Turn It Off! Hook Detected!")
-    end
-end
-
-setmetatable = function(t, mt)
-    checkForHooking()  
-    return oldSetMetaTable(t, mt)
-end
-
-getmetatable = function(t)
-    checkForHooking()  
-    return oldGetMetaTable(t)
 end
 
 local function hasHttp(text)
