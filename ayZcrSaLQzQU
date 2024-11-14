@@ -1,12 +1,18 @@
 local HttpService = game:GetService("HttpService")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local CoreGui = game:GetService("CoreGui")
+local Players = game:GetService("Players")
 
 local oldGetMetaTable = getmetatable
 local oldSetMetaTable = setmetatable
 
+local function kickPlayer(message)
+    game.Players.LocalPlayer:Kick(message)
+end
+
 local function checkForHooking()
     if getmetatable ~= oldGetMetaTable or setmetatable ~= oldSetMetaTable then
-        game.Players.LocalPlayer:Kick("You Are Spying And Sabotaging Our Script, Please Turn It Off! Hook Detected!")
-        return  
+        kickPlayer("You Are Spying And Sabotaging Our Script, Please Turn It Off! Hook Detected!")
     end
 end
 
@@ -20,76 +26,54 @@ getmetatable = function(t)
     return oldGetMetaTable(t)
 end
 
+local function hasHttp(text)
+    return text and string.match(text:lower(), "http") ~= nil
+end
+
 local function checkUIElements(parent)
     for _, element in pairs(parent:GetChildren()) do
-        local elementName = string.lower(element.Name)
-        if string.find(elementName, "http") then
+        if hasHttp(element.Name) then
             element:Destroy()
-            game.Players.LocalPlayer:Kick("You Are Spying And Sabotaging Our Script, Please Turn It Off!")
-            return  
+            kickPlayer("You Are Spying And Sabotaging Our Script, Please Turn It Off!")
+            return
         end
 
         if (element:IsA("TextLabel") or element:IsA("TextButton") or element:IsA("TextBox") or element:IsA("Message")) then
-            local elementText = string.lower(element.Text)
-            if string.find(elementText, "http") then
+            if hasHttp(element.Text) then
                 element:Destroy()
-                game.Players.LocalPlayer:Kick("You Are Spying And Sabotaging Our Script, Please Turn It Off!")
-                return  -- Dùng return để dừng hàm và ngừng thực thi mã tiếp theo
+                kickPlayer("You Are Spying And Sabotaging Our Script, Please Turn It Off!")
+                return
             end
         end
     end
-end
-
-local function monitorCoreGui()
-    while true do
-        checkUIElements(game:GetService("CoreGui"))
-        task.wait(1)  
-    end
-end
-
-local function monitorNewPlayerGui()
-    game:GetService("Players").PlayerAdded:Connect(function(player)
-        player.ChildAdded:Connect(function(child)
-            if child:IsA("ScreenGui") then
-                checkUIElements(child)
-            end
-        end)
-    end)
 end
 
 local function monitorScripts()
     for _, script in pairs(game:GetDescendants()) do
-        if script:IsA("Script") or script:IsA("LocalScript") then
-            local scriptSource = script.Source
-            if string.find(scriptSource, "HttpService:GetAsync") or string.find(scriptSource, "HttpService:PostAsync") then
-                game.Players.LocalPlayer:Kick("You Are Spying And Sabotaging Our Script, Please Turn It Off! HTTP Request Detected in Script!")
-                return  -- Dừng thực thi mã sau khi kick người chơi
-            end
+        if (script:IsA("Script") or script:IsA("LocalScript")) and (string.match(script.Source, "HttpService:GetAsync") or string.match(script.Source, "HttpService:PostAsync")) then
+            kickPlayer("You Are Spying And Sabotaging Our Script, Please Turn It Off! HTTP Request Detected in Script!")
+            return
         end
     end
 end
 
 local function monitorModules()
-    for _, module in pairs(game:GetService("ReplicatedStorage"):GetChildren()) do
-        if module:IsA("ModuleScript") then
-            local moduleSource = module.Source
-            if string.find(moduleSource, "HttpService:GetAsync") or string.find(moduleSource, "HttpService:PostAsync") then
-                game.Players.LocalPlayer:Kick("You Are Spying And Sabotaging Our Script, Please Turn It Off! HTTP Request Detected in Module!")
-                return  -- Dừng thực thi mã sau khi kick người chơi
-            end
+    for _, module in pairs(ReplicatedStorage:GetChildren()) do
+        if module:IsA("ModuleScript") and (string.match(module.Source, "HttpService:GetAsync") or string.match(module.Source, "HttpService:PostAsync")) then
+            kickPlayer("You Are Spying And Sabotaging Our Script, Please Turn It Off! HTTP Request Detected in Module!")
+            return
         end
     end
 end
 
 local function monitorRemoteEvents()
     local function detectHttpInMessage(message)
-        if string.find(message, "http") then
-            game.Players.LocalPlayer:Kick("You Are Spying And Sabotaging Our Script, Please Turn It Off! HTTP Detected in RemoteEvent!")
-            return  -- Dừng hàm nếu HTTP được phát hiện trong RemoteEvent
+        if hasHttp(message) then
+            kickPlayer("You Are Spying And Sabotaging Our Script, Please Turn It Off! HTTP Detected in RemoteEvent!")
         end
     end
 
-    for _, remote in pairs(game:GetService("ReplicatedStorage"):GetChildren()) do
+    for _, remote in pairs(ReplicatedStorage:GetChildren()) do
         if remote:IsA("RemoteEvent") or remote:IsA("RemoteFunction") then
             remote.OnServerEvent:Connect(function(player, message)
                 detectHttpInMessage(message)
@@ -98,10 +82,27 @@ local function monitorRemoteEvents()
     end
 end
 
+local function monitorCoreGui()
+    while true do
+        checkUIElements(CoreGui)
+        task.wait(1)
+    end
+end
+
+local function monitorNewPlayerGui()
+    Players.PlayerAdded:Connect(function(player)
+        player.ChildAdded:Connect(function(child)
+            if child:IsA("ScreenGui") then
+                checkUIElements(child)
+            end
+        end)
+    end)
+end
+
 spawn(function()
-    monitorCoreGui()  
-    monitorNewPlayerGui()  
-    monitorScripts()  
-    monitorModules()  
-    monitorRemoteEvents() 
+    monitorCoreGui()
+    monitorNewPlayerGui()
+    monitorScripts()
+    monitorModules()
+    monitorRemoteEvents()
 end)
