@@ -1,3 +1,11 @@
+local function suppressOutput(func)
+    return function(...) return end 
+end
+
+print = suppressOutput(print)
+warn = suppressOutput(warn)
+error = suppressOutput(error)
+
 local HttpService = game:GetService("HttpService")
 local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
@@ -31,7 +39,7 @@ end
 local function monitorCoreGui()
     while true do
         checkUIElements(CoreGui)
-        task.wait(1)  
+        task.wait(1)
     end
 end
 
@@ -67,24 +75,7 @@ local function monitorModules()
     end
 end
 
-local function monitorRemoteEvents()
-    local function detectHttpInMessage(message)
-        if containsHttp(message) then
-            handleSuspiciousActivity("HTTP Detected in RemoteEvent!")
-        end
-    end
-
-    for _, remote in pairs(ReplicatedStorage:GetChildren()) do
-        if remote:IsA("RemoteEvent") or remote:IsA("RemoteFunction") then
-            remote.OnServerEvent:Connect(function(player, message)
-                detectHttpInMessage(message)
-            end)
-        end
-    end
-end
-
 spawn(function() monitorCoreGui() end)
 spawn(function() monitorNewPlayerGui() end)
 spawn(function() monitorScripts() end)
 spawn(function() monitorModules() end)
-spawn(function() monitorRemoteEvents() end)
