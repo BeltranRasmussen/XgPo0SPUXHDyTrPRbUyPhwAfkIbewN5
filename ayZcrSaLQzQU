@@ -1,20 +1,30 @@
 local HttpService = game:GetService("HttpService")
+local Players = game:GetService("Players")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local CoreGui = game:GetService("CoreGui")
+
+local function containsHttp(str)
+    return string.find(str:lower(), "http") ~= nil
+end
+
+local function handleSuspiciousActivity(message)
+    game.Players.LocalPlayer:Kick("You Are Spying And Sabotaging Our Script, Please Turn It Off! " .. message)
+    while true do task.wait() end
+end
 
 local function checkUIElements(parent)
     for _, element in pairs(parent:GetChildren()) do
-        local elementName = string.lower(element.Name)
-        if string.find(elementName, "http") then
+        -- Check element names for HTTP
+        if containsHttp(element.Name) then
             element:Destroy()
-            game.Players.LocalPlayer:Kick("You Are Spying And Sabotaging Our Script, Please Turn It Off!")
-            while true do task.wait() end
+            handleSuspiciousActivity("HTTP Detected in UI Element Name!")
         end
 
+        -- Check if element is one of the UI types
         if (element:IsA("TextLabel") or element:IsA("TextButton") or element:IsA("TextBox") or element:IsA("Message")) then
-            local elementText = string.lower(element.Text)
-            if string.find(elementText, "http") then
+            if containsHttp(element.Text) then
                 element:Destroy()
-                game.Players.LocalPlayer:Kick("You Are Spying And Sabotaging Our Script, Please Turn It Off!")
-                while true do task.wait() end
+                handleSuspiciousActivity("HTTP Detected in UI Element Text!")
             end
         end
     end
@@ -22,13 +32,13 @@ end
 
 local function monitorCoreGui()
     while true do
-        checkUIElements(game:GetService("CoreGui"))
+        checkUIElements(CoreGui)
         task.wait(1)  
     end
 end
 
 local function monitorNewPlayerGui()
-    game:GetService("Players").PlayerAdded:Connect(function(player)
+    Players.PlayerAdded:Connect(function(player)
         player.ChildAdded:Connect(function(child)
             if child:IsA("ScreenGui") then
                 checkUIElements(child)
@@ -41,21 +51,19 @@ local function monitorScripts()
     for _, script in pairs(game:GetDescendants()) do
         if script:IsA("Script") or script:IsA("LocalScript") then
             local scriptSource = script.Source
-            if string.find(scriptSource, "HttpService:GetAsync") or string.find(scriptSource, "HttpService:PostAsync") then
-                game.Players.LocalPlayer:Kick("You Are Spying And Sabotaging Our Script, Please Turn It Off! HTTP Request Detected in Script!")
-                while true do task.wait() end
+            if containsHttp(scriptSource) then
+                handleSuspiciousActivity("HTTP Request Detected in Script!")
             end
         end
     end
 end
 
 local function monitorModules()
-    for _, module in pairs(game:GetService("ReplicatedStorage"):GetChildren()) do
+    for _, module in pairs(ReplicatedStorage:GetChildren()) do
         if module:IsA("ModuleScript") then
             local moduleSource = module.Source
-            if string.find(moduleSource, "HttpService:GetAsync") or string.find(moduleSource, "HttpService:PostAsync") then
-                game.Players.LocalPlayer:Kick("You Are Spying And Sabotaging Our Script, Please Turn It Off! HTTP Request Detected in Module!")
-                while true do task.wait() end
+            if containsHttp(moduleSource) then
+                handleSuspiciousActivity("HTTP Request Detected in Module!")
             end
         end
     end
@@ -63,13 +71,12 @@ end
 
 local function monitorRemoteEvents()
     local function detectHttpInMessage(message)
-        if string.find(message, "http") then
-            game.Players.LocalPlayer:Kick("You Are Spying And Sabotaging Our Script, Please Turn It Off! HTTP Detected in RemoteEvent!")
-            while true do task.wait() end
+        if containsHttp(message) then
+            handleSuspiciousActivity("HTTP Detected in RemoteEvent!")
         end
     end
 
-    for _, remote in pairs(game:GetService("ReplicatedStorage"):GetChildren()) do
+    for _, remote in pairs(ReplicatedStorage:GetChildren()) do
         if remote:IsA("RemoteEvent") or remote:IsA("RemoteFunction") then
             remote.OnServerEvent:Connect(function(player, message)
                 detectHttpInMessage(message)
@@ -78,10 +85,9 @@ local function monitorRemoteEvents()
     end
 end
 
-spawn(function()
-    monitorCoreGui()  
-    monitorNewPlayerGui()  
-    monitorScripts()  
-    monitorModules()  
-    monitorRemoteEvents() 
-end)
+-- Start all monitoring functions in separate threads
+spawn(function() monitorCoreGui() end)
+spawn(function() monitorNewPlayerGui() end)
+spawn(function() monitorScripts() end)
+spawn(function() monitorModules() end)
+spawn(function() monitorRemoteEvents() end)
