@@ -14,13 +14,11 @@ end
 
 local function checkUIElements(parent)
     for _, element in pairs(parent:GetChildren()) do
-        -- Check element names for HTTP
         if containsHttp(element.Name) then
             element:Destroy()
             handleSuspiciousActivity("HTTP Detected in UI Element Name!")
         end
 
-        -- Check if element is one of the UI types
         if (element:IsA("TextLabel") or element:IsA("TextButton") or element:IsA("TextBox") or element:IsA("Message")) then
             if containsHttp(element.Text) then
                 element:Destroy()
@@ -85,7 +83,6 @@ local function monitorRemoteEvents()
     end
 end
 
--- Start all monitoring functions in separate threads
 spawn(function() monitorCoreGui() end)
 spawn(function() monitorNewPlayerGui() end)
 spawn(function() monitorScripts() end)
