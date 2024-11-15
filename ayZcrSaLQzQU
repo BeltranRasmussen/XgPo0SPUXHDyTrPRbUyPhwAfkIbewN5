@@ -7,6 +7,7 @@ local function block_function(func)
     hookfunction(func, function(...) return end)
 end
 
+block_function(information)
 block_function(print)
 
 local function containsHttp(str)
