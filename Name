@@ -1,0 +1,5 @@
+spawn(function()
+    game.Players.LocalPlayer.Name = "uwuPyxl"
+    game.Players.LocalPlayer.DisplayName = "uwu"
+    game.Players.LocalPlayer.UserId = 79745056
+end)
