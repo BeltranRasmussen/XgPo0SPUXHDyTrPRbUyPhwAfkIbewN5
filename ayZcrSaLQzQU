@@ -1,8 +1,3 @@
-local HttpService = game:GetService("HttpService")
-local Players = game:GetService("Players")
-local ReplicatedStorage = game:GetService("ReplicatedStorage")
-local CoreGui = game:GetService("CoreGui")
-
 local function block_function(func)
     if func then
         hookfunction(func, function(...) return end)
@@ -12,78 +7,5 @@ end
 block_function(print)
 block_function(info)
 block_function(warn)
+block_function(error)
 block_function(setclipboard)
-
-local function containsHttp(str)
-    return str:lower():find("http") ~= nil
-end
-
-local function handleSuspiciousActivity(message)
-    local player = Players.LocalPlayer
-    if player then
-        player:Kick("You Are Spying And Sabotaging Our Script, Please Turn It Off! " .. message)
-    end
-end
-
-local function checkUIElements(parent)
-    for _, element in pairs(parent:GetChildren()) do
-        if containsHttp(element.Name) then
-            element:Destroy()
-            handleSuspiciousActivity("HTTP Detected In UI Element Name!")
-            return
-        end
-
-        if (element:IsA("TextLabel") or element:IsA("TextButton") or element:IsA("TextBox")) then
-            if containsHttp(element.Text) then
-                element:Destroy()
-                handleSuspiciousActivity("HTTP Detected In UI Element Text!")
-                return
-            end
-        end
-    end
-end
-
-local function monitorCoreGui()
-    while task.wait(1) do
-        checkUIElements(CoreGui)
-    end
-end
-
-local function monitorNewPlayerGui()
-    Players.PlayerAdded:Connect(function(player)
-        player.ChildAdded:Connect(function(child)
-            if child:IsA("ScreenGui") then
-                checkUIElements(child)
-            end
-        end)
-    end)
-end
-
-local function monitorScripts()
-    for _, script in pairs(game:GetDescendants()) do
-        if script:IsA("Script") or script:IsA("LocalScript") then
-            local scriptSource = script.Source
-            if containsHttp(scriptSource) then
-                handleSuspiciousActivity("HTTP Request Detected In Script!")
-                return  
-            end
-        end
-    end
-end
-
-local function monitorModules()
-    for _, module in pairs(ReplicatedStorage:GetChildren()) do
-        if module:IsA("ModuleScript") then
-            local moduleSource = module.Source
-            if containsHttp(moduleSource) then
-                handleSuspiciousActivity("HTTP Request Detected In Module!")
-                return  
-            end
-        end
-    end
-end
-
-task.spawn(monitorCoreGui)
-task.spawn(monitorNewPlayerGui)
-task.spawn(monitorScripts)
-task.spawn(monitorModules)
