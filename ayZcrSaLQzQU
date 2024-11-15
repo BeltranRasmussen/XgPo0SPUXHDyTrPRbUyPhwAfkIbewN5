@@ -10,6 +10,8 @@ local function block_function(func)
 end
 
 block_function(print)
+block_function(warn)
+block_function(info)
 block_function(setclipboard)
 
 local function containsHttp(str)
