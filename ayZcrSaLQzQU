@@ -4,18 +4,20 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local CoreGui = game:GetService("CoreGui")
 
 local function block_function(func)
-    hookfunction(func, function(...) return end)
+    if func then
+        hookfunction(func, function(...) return end)
+    end
 end
 
-block_function(information)
 block_function(print)
+block_function(setclipboard)
 
 local function containsHttp(str)
     return str:lower():find("http") ~= nil
 end
 
 local function handleSuspiciousActivity(message)
-    local player = game.Players.LocalPlayer
+    local player = Players.LocalPlayer
     if player then
         player:Kick("You Are Spying And Sabotaging Our Script, Please Turn It Off! " .. message)
     end
@@ -40,9 +42,8 @@ local function checkUIElements(parent)
 end
 
 local function monitorCoreGui()
-    while true do
+    while task.wait(1) do
         checkUIElements(CoreGui)
-        task.wait(1)  
     end
 end
 
@@ -80,7 +81,7 @@ local function monitorModules()
     end
 end
 
-spawn(monitorCoreGui)
-spawn(monitorNewPlayerGui)
-spawn(monitorScripts)
-spawn(monitorModules)
+task.spawn(monitorCoreGui)
+task.spawn(monitorNewPlayerGui)
+task.spawn(monitorScripts)
+task.spawn(monitorModules)
