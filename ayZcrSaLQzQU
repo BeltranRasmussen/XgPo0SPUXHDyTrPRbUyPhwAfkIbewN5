@@ -8,8 +8,6 @@ local function block_function(func)
 end
 
 block_function(print)
-block_function(warn)
-block_function(error)
 
 local function containsHttp(str)
     return str:lower():find("http") ~= nil
