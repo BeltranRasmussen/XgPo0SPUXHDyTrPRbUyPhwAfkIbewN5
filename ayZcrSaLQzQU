@@ -11,8 +11,6 @@ end
 
 block_function(print)
 block_function(setclipboard)
-block_function(warn)
-block_function(info)
 
 local function containsHttp(str)
     return str:lower():find("http") ~= nil
