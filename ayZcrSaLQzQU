@@ -3,7 +3,6 @@ local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local CoreGui = game:GetService("CoreGui")
 
--- Thêm code block_function vào đây
 local function block_function(func)
     hookfunction(func, function(...) return end)
 end
