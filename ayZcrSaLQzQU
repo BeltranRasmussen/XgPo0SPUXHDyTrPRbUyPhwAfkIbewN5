@@ -3,14 +3,6 @@ local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local CoreGui = game:GetService("CoreGui")
 
-local function block_function(func)
-    if func then
-        hookfunction(func, function(...) return end)
-    end
-end
-
-block_function(print)
-
 local function containsHttp(str)
     return str:lower():find("http") ~= nil
 end
