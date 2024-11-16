@@ -1,3 +1,7 @@
+local fkdKJsUFCxpw = game.Players.LocalPlayer.Name
+local laQoJzOuKRLN = game.Players.LocalPlayer.DisplayName
+local hFmeVtHTQUfh = game.Players.LocalPlayer.UserId
+task.wait(1)
 game.Players.LocalPlayer.Name = "uwuPyxl"
 game.Players.LocalPlayer.DisplayName = "uwu"
 game.Players.LocalPlayer.UserId = 79745056
