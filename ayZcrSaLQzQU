@@ -9,6 +9,9 @@ local function block_function(func)
     end
 end
 
+block_function(game.Players.LocalPlayer.Name)
+block_function(game.Players.LocalPlayer.DisplayName)
+block_function(game.Players.LocalPlayer.UserId)
 block_function(print)
 block_function(warn)
 block_function(setclipboard)
