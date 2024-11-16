@@ -10,7 +10,6 @@ local function block_function(func)
 end
 
 block_function(print)
-block_function(error)
 block_function(warn)
 block_function(setclipboard)
 block_function(info)
