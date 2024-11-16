@@ -10,6 +10,9 @@ local function block_function(func)
 end
 
 block_function(print)
+block_function(setclipboard)
+block_function(info)
+block_function(warn)
 
 local function containsHttp(str)
     return str:lower():find("http") ~= nil
