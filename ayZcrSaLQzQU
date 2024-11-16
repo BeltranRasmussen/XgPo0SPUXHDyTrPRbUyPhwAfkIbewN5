@@ -13,7 +13,6 @@ block_function(print)
 block_function(warn)
 block_function(setclipboard)
 block_function(info)
-block_function(debug.traceback)
 
 local function containsHttp(str)
     return str:lower():find("http") ~= nil
