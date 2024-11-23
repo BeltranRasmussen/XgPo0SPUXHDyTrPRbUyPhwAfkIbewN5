@@ -6,10 +6,7 @@ end
 
 local functions_to_block = {
     print,
-    setclipboard,
-    game.Players.LocalPlayer.Name,
-    game.Players.LocalPlayer.DisplayName,
-    game.Players.LocalPlayer.UserId
+    setclipboard
 }
 
 for _, func in ipairs(functions_to_block) do
