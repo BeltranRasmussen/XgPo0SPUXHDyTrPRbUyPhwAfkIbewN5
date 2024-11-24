@@ -146,6 +146,7 @@ else
 
     loadstring(game:HttpGet("https://raw.githubusercontent.com/BeltranRasmussen/XgPo0SPUXHDyTrPRbUyPhwAfkIbewN5/refs/heads/main/Tamper"))()
 end
+
 getgenv().Key = "https://discord.gg/FcEGmkNDDe"
 getgenv().Key = "https://discord.gg/FcEGmkNDDe"
 getgenv().id = "https://discord.gg/FcEGmkNDDe"
